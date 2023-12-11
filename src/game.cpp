@@ -7,6 +7,7 @@
 #include <iostream>
 #include "game.h"
 #include "move.h"
+#include "playermovement.h"
 
 
 const float Game::SCENE_WIDTH = 800.0f;
@@ -63,12 +64,20 @@ int Game::initPlayer() {
 void Game::processInput() {
     sf::Event event;
     while (window.pollEvent(event)) {
-        switch (event.type) {
-            case sf::Event::Closed:
-                window.close();
-                break;
-            default:
-                break;
+        if (event.type == sf::Event::Closed) {
+            window.close();
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            player.move(1.0f, 0.0f);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            player.move(-1.0f, 0.0f);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            player.move(0.0f, -1.0f);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            player.move(0.0f, 1.0f);
         }
     }
 }
@@ -82,6 +91,12 @@ void Game::update(sf::Time delta, sf::Shape &player) {
 
     // Move the player using the movePlayer function
     movePlayer(currentPosition, delta);
+
+    // Check boundaries
+    if (currentPosition.x < 0) currentPosition.x = 0;
+    if (currentPosition.y < 0) currentPosition.y = 0;
+    if (currentPosition.x > window.getSize().x) currentPosition.x = window.getSize().x;
+    if (currentPosition.y > window.getSize().y) currentPosition.y = window.getSize().y;
 
     // Set the new position of the player
     player.setPosition(currentPosition);

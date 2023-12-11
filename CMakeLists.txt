@@ -11,7 +11,8 @@ configure_file(resources/pacman.png ${CMAKE_CURRENT_BINARY_DIR}/resources/pacman
 add_executable(2D_game_assignment
         src/main.cpp
         src/game.cpp
-        src/move.cpp)
+        src/move.cpp
+        src/playermovement.cpp)
 
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 
@@ -19,6 +20,7 @@ target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 set(TEST_SOURCES
         src/move.cpp
         test/CoordinateTest.cpp
+        include/playermovement.h
 )
 
 # Add the Google Test framework
