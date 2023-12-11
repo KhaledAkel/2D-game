@@ -77,11 +77,16 @@ void Game::processInput() {
  * Function to update the position of the player
  */
 void Game::update(sf::Time delta, sf::Shape &player) {
-    Coordinate playerPosition = {player.getPosition().x, player.getPosition().y};
-    Coordinate velocity = { SPEED, SPEED };
-    Coordinate newPosition = move(playerPosition, velocity, 0.001f * delta.asMilliseconds());
-    player.setPosition(newPosition.x, newPosition.y);
+    // Get the current player position
+    sf::Vector2f currentPosition = player.getPosition();
+
+    // Move the player using the movePlayer function
+    movePlayer(currentPosition, delta);
+
+    // Set the new position of the player
+    player.setPosition(currentPosition);
 }
+
 
 /**
  * Render elements in the window

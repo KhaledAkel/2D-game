@@ -6,6 +6,7 @@
  */
 
 #include "move.h"
+const float SPEED = 1.0f; // Define SPEED
 
 Coordinate add(Coordinate a, Coordinate b) {
     Coordinate c = { 0, 0 };
@@ -21,6 +22,22 @@ Coordinate mul(float s, Coordinate a) {
     return b;
 }
 
-Coordinate move(Coordinate position, Coordinate velocity, float delta) {
-    return add(position, mul(delta, velocity));
+Coordinate move(const Coordinate &position, const Coordinate &velocity, float timeDelta) {
+    // Update the position based on velocity and time delta
+    Coordinate newPosition;
+    newPosition.x = position.x + velocity.x * timeDelta;
+    newPosition.y = position.y + velocity.y * timeDelta;
+    return newPosition;
+}
+
+void movePlayer(sf::Vector2f &position, sf::Time delta) {
+    // Define the player's velocity
+    Coordinate velocity = {SPEED, 0.0f}; // Change the velocity as needed
+
+    // Move the player using the move function
+    Coordinate newPosition = move({position.x, position.y}, velocity, 0.001f * delta.asMilliseconds());
+
+    // Update the player's position
+    position.x = newPosition.x;
+    position.y = newPosition.y;
 }

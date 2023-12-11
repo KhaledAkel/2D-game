@@ -19,7 +19,7 @@ target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 set(TEST_SOURCES
         src/move.cpp
         test/CoordinateTest.cpp
-        )
+)
 
 # Add the Google Test framework
 find_package(GTest REQUIRED)
@@ -37,3 +37,7 @@ set_target_properties(CoordinateTest PROPERTIES
 
 # Add a test target for running tests using ctest
 add_test(NAME CoordinateTest COMMAND CoordinateTest)
+
+set(SFML_DIR "/opt/homebrew/Cellar/sfml/2.6.1")
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+target_link_libraries(2D_game_assignment sfml-graphics sfml-audio)

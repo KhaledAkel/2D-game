@@ -1,0 +1,4 @@
+/Users/husseinsoliman/Documents/GitHub/2D-game/cmake-build-debug/CMakeFiles/2D_game_assignment.dir
+/Users/husseinsoliman/Documents/GitHub/2D-game/cmake-build-debug/CMakeFiles/CoordinateTest.dir
+/Users/husseinsoliman/Documents/GitHub/2D-game/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/husseinsoliman/Documents/GitHub/2D-game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
