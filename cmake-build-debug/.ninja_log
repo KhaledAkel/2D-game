@@ -1,15 +1,15 @@
 # ninja log v5
-1334	1347	1702412980065288000	lib/libgtest_maind.a	43ca529d8fa44cc5
 1294	1334	1702412980051830000	lib/libgtestd.a	49d0bf04b6f1a1e1
 3	408	1702410750040042679	CMakeFiles/2D_game_assignment.dir/test/googletest.cpp.o	cd3d233374786a86
 3	338	1702415109525430280	CMakeFiles/2D_game_assignment.dir/src/game.cpp.o	2dc68273f0265843
-338	367	1702415109555991102	2D_game_assignment	7fc67e6e02c7bf6
+1334	1347	1702412980065288000	lib/libgtest_maind.a	43ca529d8fa44cc5
 7	440	1702412759270078098	CMakeFiles/2D_game_assignment.dir/src/move.cpp.o	7ca25b2a34d5eb34
+338	367	1702415109555991102	2D_game_assignment	7fc67e6e02c7bf6
 396	429	1702415087264951928	game_tests	32ae25c97cded9dd
 2	300	1702415109488578586	CMakeFiles/2D_game_assignment.dir/src/main.cpp.o	59cf549b98a2e65c
 3	278	1702413479376040785	CMakeFiles/game_tests.dir/src/ghost.cpp.o	1f4c4a4aa154e80d
 3	395	1702415087230368289	CMakeFiles/game_tests.dir/test/googletest.cpp.o	dfa49f031aa86cd9
-0	215	1702415928757344253	build.ninja	f4f70dad2e00807
+0	246	1702421049173315341	build.ninja	f4f70dad2e00807
 7	441	1702412759272097308	CMakeFiles/2D_game_assignment.dir/src/ghost.cpp.o	78b5365798c0cba5
 0	539	1702412979253499791	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	91752d0031bec76b
 3	331	1702413328111884759	CMakeFiles/game_tests.dir/src/move.cpp.o	e1982222c3bcfa02
@@ -17,4 +17,3 @@
 2	556	1702373599265569781	CMakeFiles/2D_game_assignment.dir/src/googletest.cpp.o	7d409116a8d6b8ba
 2	452	1702336746569194902	CMakeFiles/2D_game_assignment.dir/src/playermovement.cpp.o	200af9ed8b32664f
 4	617	1702415054037538945	CMakeFiles/game_tests.dir/src/game.cpp.o	12d27ee3d3a6fd53
-0	246	1702415928757344253	build.ninja	f4f70dad2e00807
