@@ -150,7 +150,7 @@ void Game::render() {
     if (isGameOver) {
         sf::Text text;
         sf::Font font;
-        if (!font.loadFromFile("/Users/husseinsoliman/Documents/GitHub/2D-game/src/Arial.ttf")) {
+        if (!font.loadFromFile("resources/Arial.ttf")) {
             std::cerr << "Failed to load font from file 'arial.ttf'\n";
             exit(1);
         }

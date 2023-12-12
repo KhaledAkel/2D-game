@@ -16,6 +16,7 @@ public:
     Game();
     int run();
 
+
 private:
     sf::RenderWindow window;
     sf::Sprite background;

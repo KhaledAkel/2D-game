@@ -15,6 +15,9 @@ public:
     void update(float width, float height);
     void draw(sf::RenderWindow& window);
     sf::FloatRect getGlobalBounds() const;  // Add this line
+    sf::Sprite& getSprite() {
+        return sprite;
+    }
 
 private:
     sf::Sprite sprite;
