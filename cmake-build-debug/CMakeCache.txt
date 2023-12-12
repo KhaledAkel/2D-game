@@ -308,45 +308,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/opt/homebrew/bin/git
 
-//Path to a library.
-GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_LIBRARY_DEBUG:FILEPATH=GMOCK_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
-
-//Path to a library.
-GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a file.
-GTEST_INCLUDE_DIR:PATH=GTEST_INCLUDE_DIR-NOTFOUND
-
-//Path to a library.
-GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
-
-//Path to a library.
-GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
-
-//Path to a library.
-GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
-
-//The directory containing a CMake configuration file for GTest.
-GTest_DIR:PATH=/opt/homebrew/lib/cmake/GTest
-
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
-
-//The directory containing a CMake configuration file for SFML.
-SFML_DIR:PATH=/opt/homebrew/lib/cmake/SFML
-
-//Path to a file.
-SFML_DOC_DIR:PATH=/opt/homebrew/share/doc/SFML
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/husseinsoliman/Documents/GitHub/2D-game/cmake-build-debug/_deps/googletest-build/googlemock
@@ -573,32 +537,12 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding GTest
-FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/opt/homebrew/lib/cmake/GTest/GTestConfig.cmake][c ][v1.14.0()]
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11][cfound components: Interpreter ][v3.11.5()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_LIBRARY
-GMOCK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
-GMOCK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY
-GMOCK_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GMOCK_MAIN_LIBRARY_DEBUG
-GMOCK_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_INCLUDE_DIR
-GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY
-GTEST_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
-GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY
-GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
-GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //Compiler reason failure
@@ -610,8 +554,6 @@ _Python_EXECUTABLE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/b
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;5;64;;cpython-311-darwin;abi3;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=16af98a70dcdf7b11ba7bd79a89c931f
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 cmake_package_name:INTERNAL=GTest
