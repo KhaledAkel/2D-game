@@ -153,6 +153,9 @@
 			"path" : "resources/pacman.png"
 		},
 		{
+			"path" : "resources/ghost.png"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindGTest.cmake"

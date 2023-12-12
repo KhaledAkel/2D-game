@@ -1,13 +1,14 @@
 /*
  * File: game.h
- * Author: Alessandra Gorla
- * Date: November 21, 2023
+ * Authors: Adnan, Hussein & Khaled
+ * Date: December 9, 2023
  * Description: Game class header.
  */
 #pragma once
 #include <SFML/Graphics.hpp>
 
 class Game {
+    sf::Vector2f playerSpeed;
 public:
     Game();
     int run();

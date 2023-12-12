@@ -1,12 +1,12 @@
 /*
  * File: move.cpp
- * Author: Alessandra Gorla
- * Date: November 22, 2023
+ * Authors: Adnan, Hussein & Khaled
+ * Date: December 9, 2023
  * Description: Move module. It offers the functionality to let the player move.
  */
 
 #include "move.h"
-const float SPEED = 1.0f; // Define SPEED
+const float SPEED = 0.0f; // Define SPEED
 
 Coordinate add(Coordinate a, Coordinate b) {
     Coordinate c = { 0, 0 };
@@ -22,22 +22,11 @@ Coordinate mul(float s, Coordinate a) {
     return b;
 }
 
-Coordinate move(const Coordinate &position, const Coordinate &velocity, float timeDelta) {
-    // Update the position based on velocity and time delta
-    Coordinate newPosition;
-    newPosition.x = position.x + velocity.x * timeDelta;
-    newPosition.y = position.y + velocity.y * timeDelta;
-    return newPosition;
+Coordinate move(Coordinate position, Coordinate velocity, float delta) {
+    return add(position, mul(delta, velocity));
 }
 
-void movePlayer(sf::Vector2f &position, sf::Time delta) {
-    // Define the player's velocity
-    Coordinate velocity = {SPEED, 0.0f}; // Change the velocity as needed
-
-    // Move the player using the move function
-    Coordinate newPosition = move({position.x, position.y}, velocity, 0.001f * delta.asMilliseconds());
-
-    // Update the player's position
-    position.x = newPosition.x;
-    position.y = newPosition.y;
+sf::Vector2f movePlayer(sf::Vector2f currentPosition, sf::Time delta, const Velocity &velocity) {
+    Coordinate newCoordinate = move({currentPosition.x, currentPosition.y}, {velocity.vx, velocity.vy}, delta.asSeconds());
+    return sf::Vector2f(newCoordinate.x, newCoordinate.y);
 }

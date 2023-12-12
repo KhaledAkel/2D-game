@@ -1,7 +1,7 @@
 /*
  * File: main.cpp
- * Author: Alessandra Gorla
- * Date: November 21, 2023
+ * Authors: Adnan, Hussein & Khaled
+ * Date: December 9, 2023
  * Description: Main file to create and start the 2D game.
  */
 #include "game.h"

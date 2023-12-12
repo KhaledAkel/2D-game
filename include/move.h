@@ -1,7 +1,7 @@
 /*
  * File: move.h
- * Author: Alessandra Gorla
- * Date: November 22, 2023
+ * Authors: Adnan, Hussein & Khaled
+ * Date: December 9, 2023
  * Description: Move header.
  */
 
@@ -12,9 +12,15 @@ struct Coordinate {
     float y;
 };
 
+struct Velocity {
+    float vx;
+    float vy;
+};
+
 Coordinate add(Coordinate x, Coordinate y);
 
 Coordinate mul(float s, Coordinate a);
 
-Coordinate move(const Coordinate &position, const Coordinate &velocity, float timeDelta);
-void movePlayer(sf::Vector2f &position, sf::Time delta);
+Coordinate move(Coordinate position, Coordinate velocity, float delta);
+
+sf::Vector2f movePlayer(sf::Vector2f currentPosition, sf::Time delta, const Velocity &velocity);

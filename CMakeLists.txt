@@ -7,12 +7,14 @@ include_directories(include)
 
 configure_file(resources/background.png ${CMAKE_CURRENT_BINARY_DIR}/resources/background.png COPYONLY)
 configure_file(resources/pacman.png ${CMAKE_CURRENT_BINARY_DIR}/resources/pacman.png COPYONLY)
+configure_file(resources/ghost.png ${CMAKE_CURRENT_BINARY_DIR}/resources/ghost.png COPYONLY)
 
 add_executable(2D_game_assignment
         src/main.cpp
         src/game.cpp
         src/move.cpp
-        src/playermovement.cpp)
+        src/googletest.cpp
+)
 
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 
@@ -20,11 +22,13 @@ target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 set(TEST_SOURCES
         src/move.cpp
         test/CoordinateTest.cpp
-        include/playermovement.h
 )
 
 # Add the Google Test framework
 find_package(GTest REQUIRED)
+
+# Link GTest to the target
+target_link_libraries(2D_game_assignment GTest::GTest GTest::Main)
 
 # Add the test executable
 add_executable(CoordinateTest ${TEST_SOURCES})

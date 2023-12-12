@@ -1,27 +1,29 @@
 /*
  * File: game.cpp
- * Author: Alessandra Gorla
- * Date: November 21, 2023
+ * Authors: Adnan, Hussein & Khaled
+ * Date: December 9, 2023
  * Description: Game class to deal with initialization and controller of 2D my game application.
  */
+
 #include <iostream>
+#include <cstdlib>
 #include "game.h"
 #include "move.h"
-#include "playermovement.h"
 
 
-const float Game::SCENE_WIDTH = 800.0f;
-const float Game::SCENE_HEIGHT = 600.0f;
-const float Game::PLAYER_START_X = 400.0f;
-const float Game::PLAYER_START_Y = 300.0f;
+const float Game::SCENE_WIDTH = 1200.0f;
+const float Game::SCENE_HEIGHT = 800.0f;
+const float Game::PLAYER_START_X = 600.0f;
+const float Game::PLAYER_START_Y = 400.0f;
 const float Game::RADIUS = 40.0f;
 const float Game::SPEED = 150.0f;
 
-Game::Game() {
+Game::Game() : window(sf::VideoMode(1200, 800), "2D Game"), playerSpeed(0.0f, 0.0f){
     initWindow();
     initBackground();
     initPlayer();
 }
+
 /**
  * Window initializer.
  */
@@ -67,19 +69,30 @@ void Game::processInput() {
         if (event.type == sf::Event::Closed) {
             window.close();
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            player.move(1.0f, 0.0f);
+        if (event.type == sf::Event::KeyPressed) {
+            if (event.key.code == sf::Keyboard::Right) {
+                playerSpeed.x = 2.0f;
+            }
+            if (event.key.code == sf::Keyboard::Left) {
+                playerSpeed.x = -2.0f;
+            }
+            if (event.key.code == sf::Keyboard::Up) {
+                playerSpeed.y = -2.0f;
+            }
+            if (event.key.code == sf::Keyboard::Down) {
+                playerSpeed.y = 2.0f;
+            }
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            player.move(-1.0f, 0.0f);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            player.move(0.0f, -1.0f);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            player.move(0.0f, 1.0f);
+        if (event.type == sf::Event::KeyReleased) {
+            if (event.key.code == sf::Keyboard::Right || event.key.code == sf::Keyboard::Left) {
+                playerSpeed.x = 0.0f;
+            }
+            if (event.key.code == sf::Keyboard::Up || event.key.code == sf::Keyboard::Down) {
+                playerSpeed.y = 0.0f;
+            }
         }
     }
+    player.move(playerSpeed);
 }
 
 /**
@@ -89,8 +102,8 @@ void Game::update(sf::Time delta, sf::Shape &player) {
     // Get the current player position
     sf::Vector2f currentPosition = player.getPosition();
 
-    // Move the player using the movePlayer function
-    movePlayer(currentPosition, delta);
+    Velocity playerVelocity = {playerSpeed.x, playerSpeed.y};
+    currentPosition = movePlayer(currentPosition, delta, playerVelocity);
 
     // Check boundaries
     if (currentPosition.x < 0) currentPosition.x = 0;
