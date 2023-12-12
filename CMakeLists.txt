@@ -14,6 +14,7 @@ add_executable(2D_game_assignment
         src/game.cpp
         src/move.cpp
         src/googletest.cpp
+        src/ghost.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
@@ -22,6 +23,7 @@ target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 set(TEST_SOURCES
         src/move.cpp
         test/CoordinateTest.cpp
+        include/ghost.h
 )
 
 # Add the Google Test framework

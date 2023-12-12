@@ -6,6 +6,9 @@
  */
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "ghost.h"
+#include "vector"
+#include <random>
 
 class Game {
     sf::Vector2f playerSpeed;
@@ -20,6 +23,7 @@ private:
     sf::Texture playerTexture;
     sf::CircleShape player;
     sf::Clock clock;
+    sf::Texture ghostTexture;
 
     static const float SCENE_WIDTH;
     static const float SCENE_HEIGHT;
@@ -34,4 +38,13 @@ private:
     void processInput();
     void update(sf::Time delta, sf::Shape &player);
     void render();
+
+    Ghost ghost;
+    bool isGameOver;
+
+    std::vector<Ghost> ghosts;
+    std::mt19937 rng;  // random number generator
+    std::uniform_int_distribution<int> dist;  // distribution for random positions
+    int maxGhosts;  // maximum number of ghosts
+    int spawnRate;  // chance to spawn a new ghost each frame
 };
